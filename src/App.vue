@@ -1,26 +1,36 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class='container pt-1'>
+     <div class='card'>
+        <h2>Срочные новости на {{day}}</h2>
+     </div>
+  </div>
+     <AppNews v-for="item in news" :key="item" :title="item"/>
+   
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import TheHeader from './components/TheHeader.vue'
+import AppNews from './components/AppNews.vue'
 export default {
-  name: 'App',
+  data(){
+    return {
+               open: false,
+               day: new Date().toLocaleDateString(),
+               news: [
+                   'Новость 1',
+                   'Новость 2',
+                   'Новость 3',
+                   'Новость 4'
+               ]
+    }
+  },
   components: {
-    HelloWorld
+    'the-header': TheHeader,
+    AppNews: AppNews
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>

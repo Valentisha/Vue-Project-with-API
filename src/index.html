@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Faster+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+
+
+function setPerson({squadName, homeTown, members}){
+    document.body.insertAdjacentHTML(
+        'afterbegin',
+        `<header>
+          <h1>${squadName}</h1>
+            <p>Hometown: ${homeTown}</p>
+        </header>
+
+        <section>
+            ${setMembers(members)}
+        </section>
+        `
+    )
+}
+
+function setMembers(members){
+    return members.map(hero=>
+    `<article>
+        <h2>${hero.name}</h2>
+        <p>Age: ${hero.age}</p>
+             <p>SuperHeroPowers:</p>
+                 <ul>${hero.powers.map(power=>
+                 `<li>${power}</li>`
+                 ).join(' ')}</ul>
+    </article>`
+            
+    ).join(' ')
+
+}
+</script>
+
+</body>
+</html>

@@ -9,8 +9,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
-  color: #2c3e50;
-  background: #2c3e50;
+  color: #8d354f;
+  background: #8d354f;
 }
 
 hr {
@@ -67,6 +67,15 @@ h3 {
   color: #e53935;
 }
 
+.infoAboutItem span{
+  color: #42b983;
+}
+
+.infoAboutItem li{
+  font-size: 25px;
+  list-style: none;
+}
+
 .btn {
   color: #42b983;
   position: relative;
@@ -85,6 +94,29 @@ h3 {
   outline: none;
   background: #fff;
   transition: all 0.22s;
+  margin: 5px;
+  
+}
+
+.btn:disabled{
+    background-color:rgb(226, 225, 225);
+    pointer-events: none;
+    color: gray;
+}
+
+.notActive .btn{
+  background-color: lightgrey;
+  color: black;
+}
+
+.active .btn{
+  background-color: #42b983;
+  color: #fff
+}
+
+.passive .btn{
+  background-color: #42b983;
+  color: black;
 }
 
 .btn:hover {
@@ -127,7 +159,7 @@ h3 {
   border: 2px solid #ccc;
   display: block;
   width: 100%;
-  color: #2c3e50;
+  color: #8d354f;
   padding: 0.5rem 1.5rem;
   border-radius: 3px;
   font-size: 1rem;
